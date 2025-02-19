@@ -3,6 +3,8 @@ layout: default
 title: Cour 1 & 2 - Rappels d'Algèbre
 ---
 
+#
+
 **Responsable :** Jonathan Vacher (jonathan.vacher@u-paris.fr)
 
 **Contributeurs/contributrices :** E. Provenzi, C. Sutour, E. Luçon, Q. Denoyelle.

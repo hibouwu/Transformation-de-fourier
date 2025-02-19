@@ -2,7 +2,7 @@
 layout: default
 title: Cours 3 - La Transformée de Fourier Discrète
 ---
-
+#
 Responsable : Jonathan Vacher (jonathan.vacher@u-paris.fr)
 
 Contributeurs/contributrices : E. Provenzi, C. Sutour, E. Luçon, Q. Denoyelle.

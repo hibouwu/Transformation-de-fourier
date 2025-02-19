@@ -2,7 +2,7 @@
 layout: default
 title: Cours 4 & 5 - Traitements du Signal 1D et Propriétés de la Transformée de Fourier Discrète
 ---
-
+#
 **Responsable :** [Jonathan Vacher](jonathan.vacher@u-paris.fr)
 
 **Contributeurs/contributrices :** E. Provenzi, C. Sutour, E. Luçon, Q. Denoyelle.

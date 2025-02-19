@@ -2,7 +2,7 @@
 layout: default
 title: Cours 6 - Opérateurs Stationnaires et Traitement du Signal
 ---
-
+#
 Responsable : [Jonathan Vacher](jonathan.vacher@u-paris.fr)
 
 Contributeurs/contributrices : E. Provenzi, C. Sutour, E. Luçon, Q. Denoyelle.
