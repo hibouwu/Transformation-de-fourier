@@ -65,7 +65,7 @@
 
 <p>où $ v = \sum_{i=1}^{d} \alpha_{i} v_{i} $.</p>
 
-<p><strong>Remarque 1.</strong> Dans ce cours on adoptera la convention vecteur colonne et on confondra $ v $ et $ \operatorname{Vec}<em>{\mathcal{V}}(v) $ lorsqu’il n’y aura pas d’ambiguïté sur la base utilisée (i.e. elle aura été préalablement définie). Autrement, on identifiera les $ \mathbb{K} $-espaces vectoriels $ V $ et $ \mathcal{M}</em>{d, 1}(\mathbb{K}) $.</p>
+<p><strong>Remarque 1.</strong> Dans ce cours on adoptera la convention vecteur colonne et on confondra $ v $ et $ \operatorname{Vec}_{\mathcal{V}}(v) $ lorsqu’il n’y aura pas d’ambiguïté sur la base utilisée (i.e. elle aura été préalablement définie). Autrement, on identifiera les $ \mathbb{K} $-espaces vectoriels $ V $ et $ \mathcal{M}_{d, 1}(\mathbb{K}) $.</p>
 
 <p><strong>Définition 2 (Application Linéaire).</strong> Une application $ f: V \longrightarrow W $ est linéaire ssi pour tout $ (u, v) \in V^{2} $ et pour tout $ \alpha \in \mathbb{K} $,</p>
 
@@ -75,9 +75,9 @@
 
 <p><strong>Proposition 2 (Pourquoi les Matrices?).</strong> Une application linéaire est entièrement définie (de manière unique) par les images de la base $ \mathcal{V} $ exprimées dans la base $ \mathcal{W} $.</p>
 
-<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+<p><strong>Démonstration.</strong></p>
 
-<p>La proposition précédente justifie la définition et l’utilisation de matrices étant données des bases des espaces de départ et d’arrivée. En effet, celle-ci exprime que les coefficients $ (a_{i, j})_{(i, j) \in {1, \ldots, d} \times {1, \ldots, d^{\prime}}} $ déterminent de manière unique l’application linéaire $ f $ dans les bases des espaces de départ et d’arrivée.</p>
+<p>La proposition précédente justifie la définition et l’utilisation de matrices étant données des bases des espaces de départ et d’arrivée. En effet, celle-ci exprime que les coefficients $ (a_{i, j})_{(i, j) \in \{1, \ldots, d\} \times \{1, \ldots, d^{\prime}\}} $ déterminent de manière unique l’application linéaire $ f $ dans les bases des espaces de départ et d’arrivée.</p>
 
 <p><strong>Définition 3 (Matrice d’une Application Linéaire).</strong> Soit $ f \in \mathcal{L}_{\mathbb{K}}(V, W) $. La matrice de $ f $ relativement aux bases $ \mathcal{V} $ et $ \mathcal{W} $ est</p>
 
@@ -107,7 +107,7 @@ a_{d^{\prime} 1} &amp; a_{d^{\prime} 2} &amp; \ldots &amp; a_{d^{\prime} d}
 
 <p>On rappelle maintenant les notions de produits matriciels et de produit matrice-vecteur. On se restreint ici au cas des matrices carrées ou des endomorphismes (i.e. des applications linéaires ayant les mêmes espaces vectoriels au départ et à l’arrivée) mais ces notions sont bien définies pour des matrices rectangulaires ou les applications linéaires en général.</p>
 
-<p><strong>Définition 4 (Produit de Matrices et Produit Matrice-Vecteur).</strong> Soit $ (A, B) \in \mathcal{M}<em>{d}(\mathbb{K})^{2} $ et $ v \in \mathcal{M}</em>{d, 1}(\mathbb{K}) $. La matrice produit $ C = AB $ et le vecteur $ w = Av $ ont pour coefficients pour tout $ (i, j) \in {1, \ldots, d}^{2} $,</p>
+<p><strong>Définition 4 (Produit de Matrices et Produit Matrice-Vecteur).</strong> Soit $ (A, B) \in \mathcal{M}_{d}(\mathbb{K})^{2} $ et $ v \in \mathcal{M}_{d, 1}(\mathbb{K}) $. La matrice produit $ C = AB $ et le vecteur $ w = Av $ ont pour coefficients pour tout $ (i, j) \in {1, \ldots, d}^{2} $,</p>
 
 \[c_{i, j} = \sum_{k=1}^{d} a_{i, k} b_{k, j} \quad \text{et} \quad w_{i} = \sum_{k=1}^{d} a_{i, k} v_{k}\]
 
@@ -145,15 +145,15 @@ p_{d1} &amp; p_{d2} &amp; \ldots &amp; p_{dd}
 
 <p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
 
-<p><strong>Proposition 4 (Formules de Changement de Bases).</strong> Soit $ \mathcal{V}^{\prime} $ une base de $ V, (A, v) \in \mathcal{M}<em>{d}(\mathbb{K}) \times \mathcal{M}</em>{d, 1}(\mathbb{K}) $ une matrice et un vecteur exprimés dans la base $ \mathcal{V} $ et $ P \in \mathcal{M}_{d}(\mathbb{K}) $ la matrice de passage de $ \mathcal{V} $ à $ \mathcal{V}^{\prime} $. Alors la matrice $ A^{\prime} $ et le vecteur $ v^{\prime} $ exprimés dans la base $ \mathcal{V}^{\prime} $ vérifient</p>
+<p><strong>Proposition 4 (Formules de Changement de Bases).</strong> Soit $ \mathcal{V}^{\prime} $ une base de $ V, (A, v) \in \mathcal{M}_{d}(\mathbb{K}) \times \mathcal{M}_{d, 1}(\mathbb{K}) $ une matrice et un vecteur exprimés dans la base $ \mathcal{V} $ et $ P \in \mathcal{M}_{d}(\mathbb{K}) $ la matrice de passage de $ \mathcal{V} $ à $ \mathcal{V}^{\prime} $. Alors la matrice $ A^{\prime} $ et le vecteur $ v^{\prime} $ exprimés dans la base $ \mathcal{V}^{\prime} $ vérifient</p>
 
 \[A = P A^{\prime} P^{-1} \quad \text{et} \quad v = P v^{\prime}\]
 
-<p><strong>Définition 6 (Matrices Semblables).</strong> Deux matrices $ (A, B) \in \mathcal{M}<em>{d}(\mathbb{K})^{2} $ sont semblables si elles représentent le même endomorphisme dans des bases différentes i.e. s’il existe $ P \in \mathcal{G} \mathcal{L}</em>{d}(\mathbb{K}) $ tel que $ A = P B P^{-1} $.</p>
+<p><strong>Définition 6 (Matrices Semblables).</strong> Deux matrices $ (A, B) \in \mathcal{M}_{d}(\mathbb{K})^{2} $ sont semblables si elles représentent le même endomorphisme dans des bases différentes i.e. s’il existe $ P \in \mathcal{G} \mathcal{L}_{d}(\mathbb{K}) $ tel que $ A = P B P^{-1} $.</p>
 
 <h3 id="13-réduction-des-endormorphismes-et-diagonalisation-des-matrices">1.3 Réduction des Endormorphismes et Diagonalisation des Matrices</h3>
 
-<p><strong>Définition 7 (Vecteur et Valeurs Propres).</strong> Soit $ f \in \mathcal{L}<em>{\mathbb{K}}(V) $ un endomorphisme (resp. $ A \in \mathcal{M}</em>{d}(\mathbb{K}) $ une matrice). Un vecteur $ v \in V $, non nul, est un vecteur propre de $ f $ (resp. $ A $) associé à la valeur propre $ \lambda \in \mathbb{K} $ ssi $ f(v) = \lambda v $ (resp. $ Av = \lambda v $). On note $ \operatorname{Spec}(f) $ (resp. $ \operatorname{Spec}(A) $) l’ensemble des valeurs propres de $ f $ (resp. $ A $).</p>
+<p><strong>Définition 7 (Vecteur et Valeurs Propres).</strong> Soit $ f \in \mathcal{L}_{\mathbb{K}}(V) $ un endomorphisme (resp. $ A \in \mathcal{M}_{d}(\mathbb{K}) $ une matrice). Un vecteur $ v \in V $, non nul, est un vecteur propre de $ f $ (resp. $ A $) associé à la valeur propre $ \lambda \in \mathbb{K} $ ssi $ f(v) = \lambda v $ (resp. $ Av = \lambda v $). On note $ \operatorname{Spec}(f) $ (resp. $ \operatorname{Spec}(A) $) l’ensemble des valeurs propres de $ f $ (resp. $ A $).</p>
 
 <table>
   <tbody>
@@ -173,9 +173,9 @@ p_{d1} &amp; p_{d2} &amp; \ldots &amp; p_{dd}
 
 <p><strong>Figure 1.</strong> Illustration des transformations particulières qu’opère une application linéaire sur ses vecteurs propres. À gauche : valeurs propres réelles. À droite : valeurs propres complexes.</p>
 
-<p><strong>Définition 8 (Réduction d’un Endormorphisme).</strong> Un endomorphisme $ f \in \mathcal{L}<em>{\mathbb{K}}(V) $ (resp. une matrice $ A \in \mathcal{M}</em>{d}(\mathbb{K}) $) est réductible/diagonalisable ssi il existe une base de vecteurs propres (resp. ssi elle est semblable à une matrice diagonale).</p>
+<p><strong>Définition 8 (Réduction d’un Endormorphisme).</strong> Un endomorphisme $ f \in \mathcal{L}_{\mathbb{K}}(V) $ (resp. une matrice $ A \in \mathcal{M}_{d}(\mathbb{K}) $) est réductible/diagonalisable ssi il existe une base de vecteurs propres (resp. ssi elle est semblable à une matrice diagonale).</p>
 
-<p><strong>Théorème 1.</strong> Un endomorphisme $ f \in \mathcal{L}<em>{\mathbb{K}}(V) $ est réductible/diagonalisable ssi sa matrice représentative $ \operatorname{Mat}</em>{V}(f) $ dans une base $ \mathcal{V} $ est diagonalisable.</p>
+<p><strong>Théorème 1.</strong> Un endomorphisme $ f \in \mathcal{L}_{\mathbb{K}}(V) $ est réductible/diagonalisable ssi sa matrice représentative $ \operatorname{Mat}_{V}(f) $ dans une base $ \mathcal{V} $ est diagonalisable.</p>
 
 <h2 id="2-espaces-vectoriels-euclidiens-et-hermitiens">2 Espaces Vectoriels Euclidiens et Hermitiens</h2>
 
@@ -430,7 +430,7 @@ v = u + w &amp; \longmapsto &amp; w
 
 \[\operatorname{Vect}(\mathcal{F}) = \left\{v \in V \mid \exists \alpha_{1}, \ldots, \alpha_{d^{\prime}} \in \mathbb{C} \text{ tels que } v = \sum_{j=1}^{d^{\prime}} \alpha_{j} f_{j}\right\}\]
 
-<p>On considère une base orthogonale $ \mathcal{B} = {u_{1}, \ldots, u_{d}} $ de $ V $. Soit $ d^{\prime} \in \mathbb{N}^{\star} $ tel que $ d^{\prime} \leqslant d $. On pose $ \mathcal{B}<em>{0} = {u</em>{1}, \ldots, u_{d^{\prime}}} $ et $ \mathcal{B}<em>{1} = \mathcal{B} \backslash \mathcal{B}</em>{0} $. Et on définit $ W = \operatorname{Vect}(\mathcal{B}<em>{0}) $ et $ U = \operatorname{Vect}(\mathcal{B}</em>{1}) $. La projection sur $ W $ parallèlement à $ U $ est une projection orthogonale. La famille $ \mathcal{B} $ étant une base, le théorème 5 permet d’écrire un vecteur $ v \in V $ de la manière suivante</p>
+<p>On considère une base orthogonale $ \mathcal{B} = {u_{1}, \ldots, u_{d}} $ de $ V $. Soit $ d^{\prime} \in \mathbb{N}^{\star} $ tel que $ d^{\prime} \leqslant d $. On pose $ \mathcal{B}_{0} = {u_{1}, \ldots, u_{d^{\prime}}} $ et $ \mathcal{B}_{1} = \mathcal{B} \backslash \mathcal{B}_{0} $. Et on définit $ W = \operatorname{Vect}(\mathcal{B}_{0}) $ et $ U = \operatorname{Vect}(\mathcal{B}_{1}) $. La projection sur $ W $ parallèlement à $ U $ est une projection orthogonale. La famille $ \mathcal{B} $ étant une base, le théorème 5 permet d’écrire un vecteur $ v \in V $ de la manière suivante</p>
 
 \[v = \sum_{i=1}^{d} \frac{\left\langle v, u_{i}\right\rangle}{\|u_{i}\|^{2}} u_{i} = u + w \quad \text{avec} \quad u = \sum_{i=1}^{d^{\prime}} \frac{\left\langle v, u_{i}\right\rangle}{\|u_{i}\|^{2}} u_{i} \quad \text{et} \quad w = \sum_{i=d^{\prime}+1}^{d} \frac{\left\langle v, u_{i}\right\rangle}{\|u_{i}\|^{2}} u_{i}\]
 

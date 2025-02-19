@@ -47,7 +47,7 @@
 
 <p><img src="attachment:image.png" alt="Figure 1" /></p>
 
-<p><em>Figure 1. Parties réelles de la fonction harmonique fondamentale et des fonctions harmoniques d’ordre 2 à 5.</em></p>
+<p>_Figure 1. Parties réelles de la fonction harmonique fondamentale et des fonctions harmoniques d’ordre 2 à 5._</p>
 
 <p><strong>Proposition 1.</strong> Un polynôme trigonométrique est $ 2 \pi $-périodique.</p>
 
@@ -84,7 +84,7 @@
 
 <p><strong>Limite de l’échantillonnage et symétries</strong> L’échantillonnage limite la possibilités de représenter les fonctions harmoniques d’ordre trop grand! Cette limitation est exprimée par la proposition suivante.</p>
 
-<p><strong>Proposition 4.</strong> Soient $ (H_{m})<em>{m \in \mathbb{Z}} $ les fonctions harmoniques réelles et $ (h</em>{m})<em>{m \in \mathbb{Z}} \subset \ell</em>{N} $ les suites de leurs échantillons à la fréquence $ N / z \tau $ (on suppose $ N $ pair ici). Pour tout $ m \in \mathbb{Z} $ et tout $ (x, n) \in \mathbb{R} \times \mathbb{Z} $,</p>
+<p><strong>Proposition 4.</strong> Soient $ (H_{m})_{m \in \mathbb{Z}} $ les fonctions harmoniques réelles et $ (h_{m})_{m \in \mathbb{Z}} \subset \ell_{N} $ les suites de leurs échantillons à la fréquence $ N / z \tau $ (on suppose $ N $ pair ici). Pour tout $ m \in \mathbb{Z} $ et tout $ (x, n) \in \mathbb{R} \times \mathbb{Z} $,</p>
 
 \[H_{m}(x) = \cos (m x) \quad \text{et} \quad h_{m, n} = \cos \left(\frac{2 \pi m n}{N}\right)\]
 
@@ -106,7 +106,7 @@
 
 <p><img src="attachment:image.png" alt="Figure 2" /></p>
 
-<p><em>FIGURE 2. Échantillonnage des fonctions harmoniques à la fréquence $ N = 6 \times 2 \pi $. En haut à gauche : partie réelle de l’harmonique fondamentale et son échantillonnage. En haut à droite : les harmoniques d’ordre 5 et 7 ont les mêmes échantillons que l’harmonique fondamentale. En bas à gauche : partie réelle de l’harmonique d’ordre 2 et son échantillonnage. En bas à droite : les harmoniques d’ordre 4 et 8 ont les mêmes échantillons que l’harmonique d’ordre 2.</em></p>
+<p>_FIGURE 2. Échantillonnage des fonctions harmoniques à la fréquence $ N = 6 \times 2 \pi $. En haut à gauche : partie réelle de l’harmonique fondamentale et son échantillonnage. En haut à droite : les harmoniques d’ordre 5 et 7 ont les mêmes échantillons que l’harmonique fondamentale. En bas à gauche : partie réelle de l’harmonique d’ordre 2 et son échantillonnage. En bas à droite : les harmoniques d’ordre 4 et 8 ont les mêmes échantillons que l’harmonique d’ordre 2._</p>
 
 <p><strong>Multiplier des signaux entre-eux</strong> On sait que l’ensemble des suites muni de l’addition et de la multiplication par un scalaire forme un espace vectoriel $ (\ell_{n}, +, \cdot) $. Il est possible d’enrichir les opérations entre les suites en définissant une notion de produit. De manière intuitive, comme pour l’addition, le produit $ u v $ de deux suites $ (u, v) \in \ell_{N} $ peut être définie comme la suites des produits terme à terme i.e. pour tout $ n \in \mathbb{Z} $,</p>
 
@@ -116,7 +116,7 @@
 
 \[P_{n}(x) = \sum_{m=0}^{N-1} \frac{\tilde{u}_{m}}{N} e^{\mathrm{i} m x}, \quad P_{v}(x) = \sum_{m=0}^{N-1} \frac{\tilde{v}_{m}}{N} e^{\mathrm{i} m x} \quad \text{et} \quad P_{u v}(x) = \sum_{m=0}^{N-1} \frac{(\widehat{u v})_{m}}{N} e^{\mathrm{i} m x}\]
 
-<p>où pour tout $ n \in \mathbb{Z}, u_{n} = P_{n}\left(2 \pi n / \mathcal{N}\right), v_{n} = P_{v}\left(2 \pi n / \mathcal{N}\right) $ et $ (u v)<em>{n} = P</em>{u v}\left(2 \pi n / \mathcal{N}\right) $. Or, par définition la suite produit $ u v $ est définie par le produit terme à terme donc l’équation (1) se réécrit pour tout $ n \in \mathbb{Z} $,</p>
+<p>où pour tout $ n \in \mathbb{Z}, u_{n} = P_{n}\left(2 \pi n / \mathcal{N}\right), v_{n} = P_{v}\left(2 \pi n / \mathcal{N}\right) $ et $ (u v)_{n} = P_{u v}\left(2 \pi n / \mathcal{N}\right) $. Or, par définition la suite produit $ u v $ est définie par le produit terme à terme donc l’équation (1) se réécrit pour tout $ n \in \mathbb{Z} $,</p>
 
 \[P_{u v}\left(\frac{2 \pi n}{N}\right) = P_{u}\left(\frac{2 \pi n}{N}\right) P_{v}\left(\frac{2 \pi n}{N}\right)\]
 
@@ -150,23 +150,23 @@ P_{n}(x) P_{v}(x) &amp; = \sum_{m=0}^{N-1} \frac{\hat{u}_{m}}{N} e^{\mathrm{i} m
 
 <p><img src="attachment:image.png" alt="Figure 3" /></p>
 
-<p><em>Figure 3. Illustration du produit de convolution de deux suites $ (u, v) \in \ell_{3}^{2} $.</em></p>
+<p>_Figure 3. Illustration du produit de convolution de deux suites $ (u, v) \in \ell_{3}^{2} $._</p>
 
 <h3 id="12-signaux-et-spectres">1.2 Signaux et Spectres</h3>
 
-<p>Un signal est une mesure physique réalisée par un capteur. À l’ère du numérique un signal est une collection discrète de mesures physiques. Ces mesures dépendent généralement du temps (la température mesurée à un endroit, le son, etc.) ou de l’espace (la température mesurée à différents endroits, les images, etc.). On a donc bien à faire à une suite de $ N $ mesures $ z = (z_{n})<em>{n \in \mathbb{Z}} \in \ell</em>{N} $. Jusqu’ici on a supposé que des indices $ n \in \mathbb{Z} $, c’est-à-dire à une seule dimension. Cela correspond généralement à un signal temporel. On pourrait de la même manière considérer des indices $ (m, n) \in \mathbb{Z}^{2} $. Cela correspondrait alors par exemple à un signal spatial comme une image, les indices $ (m, n) $ correspondant à la position d’un pixel. De plus, on a supposé que notre signal était périodique, c’est le cas par exemple pour la température au cours de l’année. Bien que ça ne soit pas le cas de la plupart des signaux (le son, les images, etc.), c’est tout de même une hypothèse très pratique car elle permet d’étudier un signal sur un domaine borné.</p>
+<p>Un signal est une mesure physique réalisée par un capteur. À l’ère du numérique un signal est une collection discrète de mesures physiques. Ces mesures dépendent généralement du temps (la température mesurée à un endroit, le son, etc.) ou de l’espace (la température mesurée à différents endroits, les images, etc.). On a donc bien à faire à une suite de $ N $ mesures $ z = (z_{n})_{n \in \mathbb{Z}} \in \ell_{N} $. Jusqu’ici on a supposé que des indices $ n \in \mathbb{Z} $, c’est-à-dire à une seule dimension. Cela correspond généralement à un signal temporel. On pourrait de la même manière considérer des indices $ (m, n) \in \mathbb{Z}^{2} $. Cela correspondrait alors par exemple à un signal spatial comme une image, les indices $ (m, n) $ correspondant à la position d’un pixel. De plus, on a supposé que notre signal était périodique, c’est le cas par exemple pour la température au cours de l’année. Bien que ça ne soit pas le cas de la plupart des signaux (le son, les images, etc.), c’est tout de même une hypothèse très pratique car elle permet d’étudier un signal sur un domaine borné.</p>
 
 <p>En pratique on dit que la transformée de Fourier discrète permet de passer d’une représentation temporelle ou spatial à une représentation fréquentielle (on à l’espace de Fourier). Une analogie intéressante consiste à voir la transformée de Fourier comme l’équivalent du prisme de Newton pour les mathématiques. Le prisme de Newton permet de decomposer la lumière blanche en ses composantes colorées. Or la couleur de la lumière est caractérisée par la fréquence (ou longueur d’onde) de l’onde électromagnétique qui modélise la lumière. Les lumières de différentes couleurs correspondent donc bien à des ondes des différentes fréquences qui, sommées ensemble, forment la lumière blanche. La transformée de Fourier nous permet de mettre en évidence les différentes “couleurs” qui composent un signal quelconque.</p>
 
-<p><strong>Définition 4.</strong> Soit $ z \in \ell_{N} $ et $ \hat{z} = \mathcal{F}<em>{N}(z) \in \ell</em>{N} $ sa transformée de Fourier discrète. On peut écrire $ \hat{z} $ sous la forme complexe polaire (module et argument), pour tout $ m \in \mathbb{Z} $</p>
+<p><strong>Définition 4.</strong> Soit $ z \in \ell_{N} $ et $ \hat{z} = \mathcal{F}_{N}(z) \in \ell_{N} $ sa transformée de Fourier discrète. On peut écrire $ \hat{z} $ sous la forme complexe polaire (module et argument), pour tout $ m \in \mathbb{Z} $</p>
 
 \[\hat{z}_{m} = \left|\hat{z}_{m}\right| e^{\mathrm{i} \arg \left(\hat{z}_{m}\right)}\]
 
-<p>Le module $ \left|\hat{z}<em>{m}\right| $ est appelé amplitude de la fréquence $ m $ et l’argument $ \arg \left(\hat{z}</em>{m}\right) $ est appelé phase de la fréquence $ m $. De plus, on utilise le vocabulaire suivant
-(i) $ \left{\hat{z}<em>{m}, m \in {0, \ldots, N-1}\right} $ est le spectre de $ z $,
-(ii) $ \left{\left|\hat{z}</em>{m}\right|, m \in {0, \ldots, N-1}\right} $ est le spectre d’amplitude de $ z $,
-(iii) $ \left{\left|\hat{z}<em>{m}\right|^{2}, m \in {0, \ldots, N-1}\right} $ est le spectre de puissance de $ z $,
-(iv) $ \left{\arg \left(\hat{z}</em>{m}\right), m \in {0, \ldots, N-1}\right} $ est le spectre de phases de $ z $.</p>
+<p>Le module $ \left|\hat{z}_{m}\right| $ est appelé amplitude de la fréquence $ m $ et l’argument $ \arg \left(\hat{z}_{m}\right) $ est appelé phase de la fréquence $ m $. De plus, on utilise le vocabulaire suivant
+(i) $ \left{\hat{z}_{m}, m \in {0, \ldots, N-1}\right} $ est le spectre de $ z $,
+(ii) $ \left{\left|\hat{z}_{m}\right|, m \in {0, \ldots, N-1}\right} $ est le spectre d’amplitude de $ z $,
+(iii) $ \left{\left|\hat{z}_{m}\right|^{2}, m \in {0, \ldots, N-1}\right} $ est le spectre de puissance de $ z $,
+(iv) $ \left{\arg \left(\hat{z}_{m}\right), m \in {0, \ldots, N-1}\right} $ est le spectre de phases de $ z $.</p>
 
 <p><strong>Quelques interprétations</strong> L’identité de Plancherel s’interprète comme la conservation de l’énergie totale du signal</p>
 
@@ -258,7 +258,7 @@ R_{2}(z)_{3} &amp; = z_{3-2} = z_{1} = 3 \\
       <td>\hat{z}_{m}\right</td>
       <td>e^{i \operatorname{Arg}\left(\hat{z}_{m}\right)} $, comme $ \left</td>
       <td>e^{-2 i \pi \frac{m k}{N}}\right</td>
-      <td>= 1 $, le produit $ e^{-2 i \pi \frac{m k}{N}} \hat{z}<em>{m} $ change seulement la phase de $ \hat{z}</em>{m} $. Cela signifie aussi que la translation ne change pas le module des coefficients de Fourier de $ z $ i.e.</td>
+      <td>= 1 $, le produit $ e^{-2 i \pi \frac{m k}{N}} \hat{z}_{m} $ change seulement la phase de $ \hat{z}_{m} $. Cela signifie aussi que la translation ne change pas le module des coefficients de Fourier de $ z $ i.e.</td>
     </tr>
   </tbody>
 </table>
@@ -269,7 +269,7 @@ R_{2}(z)_{3} &amp; = z_{3-2} = z_{1} = 3 \\
 
 <p><img src="attachment:image.png" alt="Figure 4" /></p>
 
-<p><em>Figure 4. Translation du signal $ z = e_{2} $ d’indice $ k = 5 $. Le signal translaté est $ R_{5}\left(e_{2}\right) = e_{7} $. À droite en vert, l’argument du signal $ \overline{\mathcal{E}}_{5} $ et en rouge l’argument du signal $ \overline{\mathcal{E}}_{5} \mathcal{F}_{32}(z) $ à comparer à $ \mathcal{F}_{32}\left(R_{5}(z)\right) $.</em></p>
+<p>_Figure 4. Translation du signal $ z = e_{2} $ d’indice $ k = 5 $. Le signal translaté est $ R_{5}\left(e_{2}\right) = e_{7} $. À droite en vert, l’argument du signal $ \overline{\mathcal{E}}_{5} $ et en rouge l’argument du signal $ \overline{\mathcal{E}}_{5} \mathcal{F}_{32}(z) $ à comparer à $ \mathcal{F}_{32}\left(R_{5}(z)\right) $._</p>
 
 <p><strong>Théorème 2.</strong> Soit $ z \in \ell_{N} $ et $ k \in \mathbb{Z} $ alors</p>
 
@@ -322,13 +322,13 @@ R_{2}(z)_{3} &amp; = z_{3-2} = z_{1} = 3 \\
 
 <p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
 
-<p><strong>Corollaire 1.</strong> Soit $ z \in \ell_{N} $. On a l’équivalence suivante. La suite $ z $ est réelle (i.e. pour tout $ n \in \mathbb{N}, z_{n} \in \mathbb{R} $) ssi pour tout $ m \in \mathbb{Z}, \mathcal{F}<em>{N}(z)</em>{m} = \overline{\mathcal{F}<em>{N}(z)}</em>{-m} = \overline{\mathcal{F}<em>{N}(z)}</em>{N-m} $.</p>
+<p><strong>Corollaire 1.</strong> Soit $ z \in \ell_{N} $. On a l’équivalence suivante. La suite $ z $ est réelle (i.e. pour tout $ n \in \mathbb{N}, z_{n} \in \mathbb{R} $) ssi pour tout $ m \in \mathbb{Z}, \mathcal{F}_{N}(z)_{m} = \overline{\mathcal{F}_{N}(z)}_{-m} = \overline{\mathcal{F}_{N}(z)}_{N-m} $.</p>
 
 <p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
 
 <p><img src="attachment:image.png" alt="Figure 5" /></p>
 
-<p><em>Figure 5. Illustration du corollaire 1. Symétrie de la transformée discrète d’un signal à valeurs réelles.</em></p>
+<p>_Figure 5. Illustration du corollaire 1. Symétrie de la transformée discrète d’un signal à valeurs réelles._</p>
 
 <h3 id="23-convolutions-entre-signaux-et-opérateurs-de-convolution">2.3 Convolutions entre Signaux et Opérateurs de Convolution</h3>
 
