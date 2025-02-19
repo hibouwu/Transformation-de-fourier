@@ -1,0 +1,10 @@
+theme: minima
+title: Transformation de Fourier
+author: SHI
+highlighter: rouge
+markdown: kramdown
+destination: ./_site
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+permalink: pretty
