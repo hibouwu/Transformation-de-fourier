@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cour 1 & 2 - Rappels d'Algèbre
+permalink: /cour-1-2/
 ---
 
 #
