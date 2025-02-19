@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours 4 & 5 - Traitements du Signal 1D et Propriétés de la Transformée de Fourier Discrète</title>
+    
+    <!-- 兼容 Jekyll 的 MathJax v3 -->
+    <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Cours 4 & 5 - Traitements du Signal 1D et Propriétés de la Transformée de Fourier Discrète</h1>
+    </header>
+    <main>
+        <p>#
+<strong>Responsable :</strong> <a href="jonathan.vacher@u-paris.fr">Jonathan Vacher</a></p>
+
+<p><strong>Contributeurs/contributrices :</strong> E. Provenzi, C. Sutour, E. Luçon, Q. Denoyelle.</p>
+
+<h2 id="1-interprétation-des-coefficients-de-fourier">1 Interprétation des coefficients de Fourier</h2>
+
+<h3 id="11-échantillonnage-dun-polynôme-trigonométrique">1.1 Échantillonnage d’un Polynôme Trigonométrique</h3>
+
+<p><strong>Définition 1 (Polynôme Trigonométrique).</strong> Soit $ P \in \mathcal{F}(\mathbb{R}, \mathbb{C}) $ une fonction de la variable réelle à valeurs complexes. La fonction $ P $ est un polynôme trigonométrique si et seulement s’il existe $ (Q_{1}, Q_{2}) \in \mathbb{C}[X]^{2} $ tel que pour tout $ x \in \mathbb{R} $,</p>
+
+\[P(x) = Q_{1}(e^{\mathrm{i} x}) + Q_{2}(e^{-\mathrm{i} x})\]
+
+<p>Autrement dit, il existe $ N \in \mathbb{N} $ et $ (c_{-N}, \ldots, c_{-1}, c_{0}, c_{1}, \ldots, c_{N}) \in \mathbb{C}^{2 N+1} $ tels que pour tout $ x \in \mathbb{R} $,</p>
+
+\[P(x) = \sum_{m=-N}^{N} c_{m} (e^{\mathrm{i} x})^{m} = \sum_{m=-N}^{N} c_{m} e^{\mathrm{i} m x}\]
+
+<p><strong>Remarque 1 (Fonctions Harmoniques).</strong> La fonction $ H_{c}: x \mapsto e^{\mathrm{i} x} $ est appelée harmonique complexe fondamentale et les fonctions $ H_{c ; m}: x \mapsto e^{\mathrm{i} m x} $ pour $ m \in {2, \ldots, N-1} $ sont appelées harmoniques complexes d’ordre supérieur.</p>
+
+<p><img src="attachment:image.png" alt="Figure 1" /></p>
+
+<p><em>Figure 1. Parties réelles de la fonction harmonique fondamentale et des fonctions harmoniques d’ordre 2 à 5.</em></p>
+
+<p><strong>Proposition 1.</strong> Un polynôme trigonométrique est $ 2 \pi $-périodique.</p>
+
+<p><strong>Définition 2 (Échantillonnage d’une Fonction Périodique).</strong> Soit $ f \in \mathcal{F}(\mathbb{R}, \mathbb{C}) $ une fonction $ T $-périodique (i.e. pour tout $ x \in \mathbb{R}, f(x+T) = f(x) $) et $ N \in \mathbb{N}^{*} $. L’échantillonnage à la fréquence $ N / \tau $ (ou de période $ T / N $) de la fonction $ f $ est la suite $ u = (u_{n})_{n \in \mathbb{Z}} $ définie pour tout $ n \in \mathbb{Z} $ par</p>
+
+\[u_{n} = f\left(\frac{T n}{N}\right)\]
+
+<p>En pratique, on échantillonnera souvent des fonctions $ 2 \pi $-périodique, on aura</p>
+
+\[u_{n} = f\left(\frac{2 \pi n}{N}\right)\]
+
+<p><strong>Proposition 2.</strong> La suite $ u $ échantillonnant une fonction $ T $-périodique $ f $ à la fréquence $ N / \tau \in \mathbb{N}^{*} $ est $ N $-périodique i.e. $ u \in \ell_{N} $.</p>
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p>La proposition suivante fait lien entre les polynômes trigonométriques et la transformée de Fourier discrète via la notion d’échantillonnage.</p>
+
+<p><strong>Proposition 3.</strong> Soit $ P $ un polynôme trigonométrique et $ z $ la suite échantillonnant $ P $ à la fréquence $ N / z \tau $. Pour tout $ (x, n) \in \mathbb{R} \times \mathbb{Z} $,</p>
+
+\[P(x) = \sum_{m=0}^{N-1} c_{m} e^{\mathrm{i} m x} \quad \text{et} \quad z_{n} = P\left(\frac{2 \pi n}{N}\right) = \sum_{m=0}^{N-1} c_{m} e^{2 \mathrm{i} \pi \frac{n}{N} \mathrm{i}}\]
+
+<p>avec $ (c_{0}, \ldots, c_{N-1}) \in \mathbb{C}^{N} $. Alors pour tout $ m \in {0, \ldots, N-1} $,</p>
+
+\[\hat{z}_{m} = \mathcal{F}_{N}(z)_{m} = N c_{m}\]
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p>Ce résultat signifie deux choses :
+(i) une suite périodique $ z \in \ell_{N} $ peut toujours être vu comme le résultat de l’échantillonnage à la fréquence $ N / z \tau $ du polynôme</p>
+
+\[P(x) = \sum_{m=0}^{N-1} \frac{z_{m}}{N} e^{\mathrm{i} m x}\]
+
+<p>(ii) la transformée de Fourier discrète $ \hat{z} \in \ell_{N} $ d’une suite périodique $ z \in \ell_{N} $ est la suite des coefficients du polynôme échantillonné à la constante $ N $ près.</p>
+
+<p><strong>Limite de l’échantillonnage et symétries</strong> L’échantillonnage limite la possibilités de représenter les fonctions harmoniques d’ordre trop grand! Cette limitation est exprimée par la proposition suivante.</p>
+
+<p><strong>Proposition 4.</strong> Soient $ (H_{m})<em>{m \in \mathbb{Z}} $ les fonctions harmoniques réelles et $ (h</em>{m})<em>{m \in \mathbb{Z}} \subset \ell</em>{N} $ les suites de leurs échantillons à la fréquence $ N / z \tau $ (on suppose $ N $ pair ici). Pour tout $ m \in \mathbb{Z} $ et tout $ (x, n) \in \mathbb{R} \times \mathbb{Z} $,</p>
+
+\[H_{m}(x) = \cos (m x) \quad \text{et} \quad h_{m, n} = \cos \left(\frac{2 \pi m n}{N}\right)\]
+
+<p>Alors pour tout $ (m, n) \in \mathbb{Z}^{2} $,</p>
+
+\[h_{m+N, n} = h_{m, n} \quad \text{et} \quad h_{N-m, n} = h_{m, n}\]
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p>Cette proposition signifie
+(i) que pour tout $ k \in \mathbb{Z} $ les suites $ h_{m+k N} $ et $ h_{m} $ sont identiques pour tout $ m \in {0, \ldots, N-1} $.
+(ii) que les suites $ h_{m} $ et $ h_{N-m} $ sont identiques pour tout $ m \in {0, \ldots, N-1} $ (ou $ m \in \left{0, \ldots, \frac{N}{2}\right} $ pour ne pas dire 2 fois la même chose).</p>
+
+<p>Autrement dit lorsque l’on s’autorise à avoir $ N $ échantillons, on ne peut représenter de manière unique à l’aide de leurs échantillons que les fonctions harmoniques $ H_{m} $ pour $ m \in \left{0, \ldots, \frac{N}{2}\right} $. Lorsque $ m \in \left{\frac{N}{2}+1, \ldots, N-1\right} $, les fonctions harmoniques $ H_{m} $ ont les mêmes échantillons que les précédentes (i.e. lorsque $ m \in \left{0, \ldots, \frac{N}{2}\right} $). Un exemple est donné dans la figure 2 pour $ N = 6 $. En conclusion, étant donné un échantillonnage à la fréquence $ N / z \tau $, on peut représenter de manière unique (cf. exercice TD 3) les fonctions harmoniques jusqu’à l’ordre $ N / z $ (les autres fonctions Harmoniques restent inaccessibles car leurs échantillons ne sont pas différents des fonctions Harmoniques précédentes). Autrement dit, la fréquence maximale d’un signal que l’on peut représenter à l’aide de $ N $ échantillons est $ N / 2 $. Il s’agit de la fonction harmonique d’ordre $ N / 2 $ i.e. pour tout $ n \in \mathbb{Z} $,</p>
+
+\[h_{\frac{N}{2}, n} = \cos (\pi n) = (-1)^{n}\]
+
+<p>On comprend intuitivement qu’il s’agit bien de la suite qui oscille le plus en passant de 1 à -1 à chaque incrément d’indice d’une unité. Le résultat limitant la fréquence maximale que l’on peut représenter à l’aide d’un certain nombre d’échantillon correspond au théorème de Shannon.</p>
+
+<p><img src="attachment:image.png" alt="Figure 2" /></p>
+
+<p><em>FIGURE 2. Échantillonnage des fonctions harmoniques à la fréquence $ N = 6 \times 2 \pi $. En haut à gauche : partie réelle de l’harmonique fondamentale et son échantillonnage. En haut à droite : les harmoniques d’ordre 5 et 7 ont les mêmes échantillons que l’harmonique fondamentale. En bas à gauche : partie réelle de l’harmonique d’ordre 2 et son échantillonnage. En bas à droite : les harmoniques d’ordre 4 et 8 ont les mêmes échantillons que l’harmonique d’ordre 2.</em></p>
+
+<p><strong>Multiplier des signaux entre-eux</strong> On sait que l’ensemble des suites muni de l’addition et de la multiplication par un scalaire forme un espace vectoriel $ (\ell_{n}, +, \cdot) $. Il est possible d’enrichir les opérations entre les suites en définissant une notion de produit. De manière intuitive, comme pour l’addition, le produit $ u v $ de deux suites $ (u, v) \in \ell_{N} $ peut être définie comme la suites des produits terme à terme i.e. pour tout $ n \in \mathbb{Z} $,</p>
+
+\[(u v)_{n} = u_{n} v_{n}\]
+
+<p>Or on a vu que des suites périodiques peuvent toujours être vu comme l’échantillonnage de polynômes dont les coefficients correspondent aux transformées de Fourier discrètes de ces suites, ainsi peut poser pour tout $ x \in \mathbb{R} $</p>
+
+\[P_{n}(x) = \sum_{m=0}^{N-1} \frac{\tilde{u}_{m}}{N} e^{\mathrm{i} m x}, \quad P_{v}(x) = \sum_{m=0}^{N-1} \frac{\tilde{v}_{m}}{N} e^{\mathrm{i} m x} \quad \text{et} \quad P_{u v}(x) = \sum_{m=0}^{N-1} \frac{(\widehat{u v})_{m}}{N} e^{\mathrm{i} m x}\]
+
+<p>où pour tout $ n \in \mathbb{Z}, u_{n} = P_{n}\left(2 \pi n / \mathcal{N}\right), v_{n} = P_{v}\left(2 \pi n / \mathcal{N}\right) $ et $ (u v)<em>{n} = P</em>{u v}\left(2 \pi n / \mathcal{N}\right) $. Or, par définition la suite produit $ u v $ est définie par le produit terme à terme donc l’équation (1) se réécrit pour tout $ n \in \mathbb{Z} $,</p>
+
+\[P_{u v}\left(\frac{2 \pi n}{N}\right) = P_{u}\left(\frac{2 \pi n}{N}\right) P_{v}\left(\frac{2 \pi n}{N}\right)\]
+
+<p>Calculons donc le produit des polynômes $ P_{n} $ et $ P_{v} $, pour tout $ x \in \mathbb{R} $, on a</p>
+
+\[\begin{aligned}
+P_{n}(x) P_{v}(x) &amp; = \sum_{m=0}^{N-1} \frac{\hat{u}_{m}}{N} e^{\mathrm{i} m x} \sum_{m=0}^{N-1} \frac{\hat{v}_{m}}{N} e^{\mathrm{i} m x} = \frac{1}{N^{2}} \sum_{k=0}^{N-1} \sum_{l=0}^{N-1} \hat{u}_{k} e^{\mathrm{i} k x} \hat{u}_{l} e^{\mathrm{i} l x} = \frac{1}{N^{2}} \sum_{k=0}^{N-1} \sum_{l=0}^{N-1} \hat{u}_{k} \hat{u}_{l} e^{(\mathrm{i} k+l) x} \\
+&amp; = \frac{1}{N^{2}} \sum_{m=0}^{N-1} \sum_{k=0}^{N-1} \sum_{l=0}^{N-1} \hat{u}_{k} \hat{u}_{l} \delta_{k+l, n} e^{(\mathrm{i} k+l) x} = \frac{1}{N^{2}} \sum_{m=0}^{N-1} e^{\mathrm{i} m x} \sum_{k=0}^{N-1} \sum_{l=0}^{N-1} \hat{u}_{k} \hat{u}_{l} \delta_{k+l, n} \\
+&amp; = \frac{1}{N^{2}} \sum_{m=0}^{N-1} e^{\mathrm{i} m x} \sum_{k=0}^{N-1} \hat{u}_{k} \hat{u}_{m-k} = \sum_{m=0}^{N-1} \left(\frac{1}{N^{2}} \sum_{k=0}^{N-1} \hat{u}_{k} \hat{u}_{m-k}\right) e^{\mathrm{i} m x}
+\end{aligned}\]
+
+<p>Or puisque</p>
+
+\[P_{n}(x) P_{v}(x) = P_{n v}(x) = \sum_{m=0}^{N-1} \frac{(\widehat{u v})_{m}}{N} e^{\mathrm{i} m x}\]
+
+<p>on en déduit par unicité des coefficients de Fourier que</p>
+
+\[(\widehat{u v})_{m} = \frac{1}{N} \sum_{k=0}^{N-1} \hat{u}_{k} \hat{u}_{m-k}\]
+
+<p>La transformée de Fourier discrète du produit de deux suites mène à une expression remarquable. En fait, il s’agit d’une nouvelle notion de produit : c’est le produit de convolution. On a la définition suivante.</p>
+
+<p><strong>Définition 3 (Produit de Convolution).</strong> Soit $ (u, v) \in \ell_{N}^{2} $, on définit le produit de convolution de $ u $ et $ v $ comme la suite $ u * v $ avec pour tout $ n \in \mathbb{Z} $,</p>
+
+\[(u * v)_{n} = \sum_{k=0}^{N-1} u_{k} v_{n-k}\]
+
+<p><strong>Proposition 5 (Symétrie du Produit de Convolution).</strong> Soit $ (u, v) \in \ell_{N}^{2} $, le produit de convolution de $ u $ et $ v $ vérifie pour tout $ n \in \mathbb{Z} $,</p>
+
+\[(u * v)_{n} = \sum_{k=0}^{N-1} u_{k} v_{n-k} = \sum_{k=0}^{N-1} u_{n-k} v_{k}\]
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p><img src="attachment:image.png" alt="Figure 3" /></p>
+
+<p><em>Figure 3. Illustration du produit de convolution de deux suites $ (u, v) \in \ell_{3}^{2} $.</em></p>
+
+<h3 id="12-signaux-et-spectres">1.2 Signaux et Spectres</h3>
+
+<p>Un signal est une mesure physique réalisée par un capteur. À l’ère du numérique un signal est une collection discrète de mesures physiques. Ces mesures dépendent généralement du temps (la température mesurée à un endroit, le son, etc.) ou de l’espace (la température mesurée à différents endroits, les images, etc.). On a donc bien à faire à une suite de $ N $ mesures $ z = (z_{n})<em>{n \in \mathbb{Z}} \in \ell</em>{N} $. Jusqu’ici on a supposé que des indices $ n \in \mathbb{Z} $, c’est-à-dire à une seule dimension. Cela correspond généralement à un signal temporel. On pourrait de la même manière considérer des indices $ (m, n) \in \mathbb{Z}^{2} $. Cela correspondrait alors par exemple à un signal spatial comme une image, les indices $ (m, n) $ correspondant à la position d’un pixel. De plus, on a supposé que notre signal était périodique, c’est le cas par exemple pour la température au cours de l’année. Bien que ça ne soit pas le cas de la plupart des signaux (le son, les images, etc.), c’est tout de même une hypothèse très pratique car elle permet d’étudier un signal sur un domaine borné.</p>
+
+<p>En pratique on dit que la transformée de Fourier discrète permet de passer d’une représentation temporelle ou spatial à une représentation fréquentielle (on à l’espace de Fourier). Une analogie intéressante consiste à voir la transformée de Fourier comme l’équivalent du prisme de Newton pour les mathématiques. Le prisme de Newton permet de decomposer la lumière blanche en ses composantes colorées. Or la couleur de la lumière est caractérisée par la fréquence (ou longueur d’onde) de l’onde électromagnétique qui modélise la lumière. Les lumières de différentes couleurs correspondent donc bien à des ondes des différentes fréquences qui, sommées ensemble, forment la lumière blanche. La transformée de Fourier nous permet de mettre en évidence les différentes “couleurs” qui composent un signal quelconque.</p>
+
+<p><strong>Définition 4.</strong> Soit $ z \in \ell_{N} $ et $ \hat{z} = \mathcal{F}<em>{N}(z) \in \ell</em>{N} $ sa transformée de Fourier discrète. On peut écrire $ \hat{z} $ sous la forme complexe polaire (module et argument), pour tout $ m \in \mathbb{Z} $</p>
+
+\[\hat{z}_{m} = \left|\hat{z}_{m}\right| e^{\mathrm{i} \arg \left(\hat{z}_{m}\right)}\]
+
+<p>Le module $ \left|\hat{z}<em>{m}\right| $ est appelé amplitude de la fréquence $ m $ et l’argument $ \arg \left(\hat{z}</em>{m}\right) $ est appelé phase de la fréquence $ m $. De plus, on utilise le vocabulaire suivant
+(i) $ \left{\hat{z}<em>{m}, m \in {0, \ldots, N-1}\right} $ est le spectre de $ z $,
+(ii) $ \left{\left|\hat{z}</em>{m}\right|, m \in {0, \ldots, N-1}\right} $ est le spectre d’amplitude de $ z $,
+(iii) $ \left{\left|\hat{z}<em>{m}\right|^{2}, m \in {0, \ldots, N-1}\right} $ est le spectre de puissance de $ z $,
+(iv) $ \left{\arg \left(\hat{z}</em>{m}\right), m \in {0, \ldots, N-1}\right} $ est le spectre de phases de $ z $.</p>
+
+<p><strong>Quelques interprétations</strong> L’identité de Plancherel s’interprète comme la conservation de l’énergie totale du signal</p>
+
+\[\|z\|^{2} = \frac{1}{N} \sum_{m=0}^{N-1} \left|\hat{z}_{m}\right|^{2} = \frac{1}{N} \|\hat{z}\|^{2}\]
+
+<p>On observe en fait que l’énergie totale du signal se décompose comme la somme des énergies associées à chaque harmonique (le facteur $ \nicefrac1 $ apparaît à cause de notre choix de normalisation dans la définition de la transformée de Fourier discrète).</p>
+
+<p>Un coefficient de Fourier joue un rôle particulier, c’est $ \hat{z}_{0} $. Ce coefficient correspond en fait à la valeur moyenne de $ z $</p>
+
+\[\hat{z}_{0} = \sum_{n=0}^{N-1} z_{n} e^{2 i \pi \frac{n \pi}{N}} = \sum_{n=0}^{N-1} z_{n} = N \langle z \rangle\]
+
+<p>où $ \langle z \rangle = \frac{1}{N} \sum_{n=0}^{N-1} z_{n} $ est la valeur moyenne du signal $ z $. On peut alors réécrire le signal $ z $ de la manière suivante</p>
+
+\[z_{n} = \frac{1}{N} \sum_{m=0}^{N-1} \hat{z}_{m} e^{2 i \pi \frac{m \pi}{N}} = \frac{1}{N} N \langle z \rangle + \frac{1}{N} \sum_{m=1}^{N-1} \hat{z}_{m} e^{2 i \pi \frac{m \pi}{N}} = \langle z \rangle + \frac{1}{N} \sum_{m=1}^{N-1} \hat{z}_{m} e^{2 i \pi \frac{m \pi}{N}}\]
+
+<p>Par emprunt du vocabulaire utilisé pour l’électricité, le coefficient de Fourier $ \hat{z}_{0} $ correspond à la composante “DC” du signal (courant continu), tandis que les autres termes constituent la composante “AC” (courant alternatif).</p>
+
+<h2 id="2-propriétés-de-la-transformée-de-fourier-discrète">2 Propriétés de la Transformée de Fourier Discrète</h2>
+
+<p>Dans cette section, on démontrera les plus importantes propriétés de la transformée de Fourier discrète. On rappelle la propriété suivante de translation de l’index d’une somme.</p>
+
+<p><strong>Proposition 6.</strong> Soit $ u \in \mathbb{C}^{\mathbb{Z}} $ une suite complexe alors pour tout $ (m, n, k) \in \mathbb{Z}^{3} $</p>
+
+\[\sum_{l=m}^{n} a_{l} = \sum_{l=m-k}^{n-k} a_{l+k} = \sum_{l=m+k}^{n+k} a_{l-k}\]
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p>Cette propriété appliquée à une suite périodique donne le lemme suivant.</p>
+
+<p><strong>Lemme 1.</strong> Soit $ z \in \ell_{N} $ une suite complexe $ N $-périodique alors pour tout $ m \in \mathbb{Z} $</p>
+
+\[\sum_{n=m}^{m+N-1} z_{n} = \sum_{n=0}^{N-1} z_{n}\]
+
+<p>i.e. la somme de $ z $ sur tout intervalle de taille $ N $ est constante.</p>
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<h3 id="21-translation-dun-signal-et-opérateurs-de-translation">2.1 Translation d’un Signal et Opérateurs de Translation</h3>
+
+<p>Dans cette section on s’intéresse à l’effet qu’a une translation sur la transformée de Fourier discrète d’un signal $ z \in \ell_{N} $. Pour formaliser ceci, on commence par définir ce qu’est une translation en définissant un opérateur (i.e. une application linéaire) de $ \ell_{N} $ effectuant cette opération.</p>
+
+<p><strong>Définition 5.</strong> Soit $ z \in \ell_{N} $ une suite complexe $ N $-périodique et $ k \in \mathbb{Z} $. On appelle opérateur de translation de longueur $ k $, l’application linéaire suivante</p>
+
+\[\begin{aligned}
+R_{k}: &amp; \ell_{N} \longrightarrow \ell_{N} \\
+&amp; z \longmapsto R_{k}(z) \left(\text{ou } R_{k} z\right)
+\end{aligned}\]
+
+<p>où $ R_{k}(z) $ est la suite définie pour tout $ n \in \mathbb{Z} $ par</p>
+
+\[R_{k}(z)_{n} = z_{n-k} \quad \left(\text{ou } R_{k} z_{n} = z_{n-k}\right)\]
+
+<p><strong>Exemple 1 (Exemple d’opérateur de translation).</strong> Soit $ z \in \ell_{6} $ avec</p>
+
+\[\left(z_{0}, z_{1}, z_{2}, z_{3}, z_{4}, z_{5}\right) = (2, 3-i, 2 i, 4+i, 0, 1)\]
+
+<p>Regardons l’effet d’une translation de longueur $ k = 2 $. On a</p>
+
+\[\begin{aligned}
+R_{2}(z)_{0} &amp; = z_{0-2} = z_{-2} = z_{-2+6} = z_{4} = 0 \\
+R_{2}(z)_{1} &amp; = z_{1-2} = z_{-1} = z_{-1+6} = z_{5} = 1 \\
+R_{2}(z)_{2} &amp; = z_{2-2} = z_{0} = 2 \\
+R_{2}(z)_{3} &amp; = z_{3-2} = z_{1} = 3 \\
+\ldots &amp; = \ldots
+\end{aligned}\]
+
+<p>Ainsi</p>
+
+\[\left(R_{2}(z)_{0}, R_{2}(z)_{1}, R_{2}(z)_{2}, R_{2}(z)_{3}, R_{2}(z)_{4}, R_{2}(z)_{5}\right) = (0, 1, 2, 3-i, 2 i, 4+i)\]
+
+<p>L’effet de $ R_{2} $ sur $ z $ est juste de déplacer à droite de 2 positions les éléments de la suite en replaçant au début les éléments de la fin. De la même manière pour la translation de longueur $ k = -2 $, on a</p>
+
+\[\left(R_{-2}(z)_{0}, R_{-2}(z)_{1}, R_{-2}(z)_{2}, R_{-2}(z)_{3}, R_{-2}(z)_{4}, R_{-2}(z)_{5}\right) = (2 i, 4+i, 0, 1, 2, 3-i)\]
+
+<p>Un opérateur de translation peut être appliqué à une suite $ z \in \ell_{N} $. Dans ce cas on peut étudier l’effet de cette translation sur la transformée de Fourier $ \hat{z} $ de $ z $. Réciproquement, on peut appliquer un opérateur de translation sur la transformée de Fourier $ \hat{z} $ et étudier l’effet de cette translation sur le signal $ z $ d’origine. Cela conduit aux deux théorèmes suivants.</p>
+
+<p><strong>Théorème 1.</strong> Soit $ z \in \ell_{N} $ et $ k \in \mathbb{Z} $ alors</p>
+
+\[\mathcal{F}_{N}\left(R_{k}(z)\right) = \overline{R_{k}(z)} = \overline{\mathcal{E}}_{k} \hat{z}\]
+
+<p>où on rappelle que pour tout $ m \in \mathbb{Z}, \overline{\mathcal{E}}_{k, m} = e^{2 i \pi \frac{m k}{N}} $.</p>
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Remarque 2.</strong> On observe que, en écrivant $ \hat{z}_{m} = \left</td>
+      <td>\hat{z}_{m}\right</td>
+      <td>e^{i \operatorname{Arg}\left(\hat{z}_{m}\right)} $, comme $ \left</td>
+      <td>e^{-2 i \pi \frac{m k}{N}}\right</td>
+      <td>= 1 $, le produit $ e^{-2 i \pi \frac{m k}{N}} \hat{z}<em>{m} $ change seulement la phase de $ \hat{z}</em>{m} $. Cela signifie aussi que la translation ne change pas le module des coefficients de Fourier de $ z $ i.e.</td>
+    </tr>
+  </tbody>
+</table>
+
+\[\left|\mathcal{F}_{N}\left(R_{k}(z)\right)_{m}\right| = \left|\mathcal{F}_{N}(z)_{m}\right|\]
+
+<p>Les modules des coefficients de Fourier de $ z $ et de toutes ses translations $ R_{k}(z) $ pour $ k \in \mathbb{Z} $ sont égaux. Le module des coefficients de Fourier d’un signal porte une information sur l’importance de la fréquence $ m $ présente dans ce signal mais pas sur sa position dans ce signal. Au contraire les phases portent une information locale à propos du signal. Celle-ci est difficile à interpréter. Cependant, on peut dire qu’une discontinuité dans un signal requiert un alignement des phases de plusieurs fréquences pour être correctement représentée. Le théorème 1 est illustré à la figure 4.</p>
+
+<p><img src="attachment:image.png" alt="Figure 4" /></p>
+
+<p><em>Figure 4. Translation du signal $ z = e_{2} $ d’indice $ k = 5 $. Le signal translaté est $ R_{5}\left(e_{2}\right) = e_{7} $. À droite en vert, l’argument du signal $ \overline{\mathcal{E}}_{5} $ et en rouge l’argument du signal $ \overline{\mathcal{E}}_{5} \mathcal{F}_{32}(z) $ à comparer à $ \mathcal{F}_{32}\left(R_{5}(z)\right) $.</em></p>
+
+<p><strong>Théorème 2.</strong> Soit $ z \in \ell_{N} $ et $ k \in \mathbb{Z} $ alors</p>
+
+\[R_{k}\left(\mathcal{F}_{N}(z)\right) = R_{k}(\hat{z}) = \mathcal{F}_{N}\left(\mathcal{E}_{k} z\right) = \overline{\mathcal{E}_{k} z}\]
+
+<p>où on rappelle que pour tout $ m \in \mathbb{Z}, \overline{\mathcal{E}}_{k, m} = e^{2 i \pi \frac{m k}{N}} $. Ce résultat peut se réécrire</p>
+
+\[\mathcal{F}_{N}^{-1}\left(R_{k}\left(\mathcal{F}_{N}(z)\right)\right) = \mathcal{F}_{N}^{-1}\left(R_{k}(\hat{z})\right) = \mathcal{E}_{k} z\]
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p>La translation de longueur $ k $ d’une suite $ z $ correspond à la multiplication terme à terme de la transformée de Fourier de cette suite par la suite conjuguée de la $ k $-ième suite de la base de Fourier. De même, la translation de longueur $ k $ de la transformée de Fourier d’une suite correspond à la transformée de Fourier de la multiplication de cette suite par la $ k $-ième suite de la base de Fourier. Les théorèmes 1 et 2 peuvent être résumé par la tableau suivant.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Représentation originale</th>
+      <th style="text-align: center">Espace de Fourier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$ z_{n-k} $</td>
+      <td style="text-align: center">$ e^{-2 i \pi \frac{n k}{N}} \hat{z}_{m} $</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$ e^{2 i \pi \frac{n k}{N}} z_{n} $</td>
+      <td style="text-align: center">$ \hat{z}_{m-k} $</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="22-conjugaison-dun-signal-et-opérateurs-de-conjugaison">2.2 Conjugaison d’un Signal et Opérateurs de Conjugaison</h3>
+
+<p>Dans cette section, on s’intéresse à l’effet qu’a l’opération de conjugaison d’une suite sur sa transformée de Fourier discrète. La conjuguée d’une suite est simplement la suite des termes conjugués de cette suite. Pour écrire simplement les résultats on a besoin de la notion de suite renversée suivante.</p>
+
+<p><strong>Définition 6 (Suite renversée).</strong> Soit $ z \in \ell_{N} $ la suite renversée de $ z $, notée $ z^{-} $ est définie pour tout $ n \in \mathbb{Z} $ par</p>
+
+\[z_{n}^{-} = z_{-n}\]
+
+<p>On a le théorème suivant reliant la transformée de Fourier de la suite conjuguée au renversement de la conjuguée de la transformée de Fourier de cette suite.</p>
+
+<p><strong>Théorème 3.</strong> Soit $ z \in \ell_{N} $ alors</p>
+
+\[\mathcal{F}_{N}(\bar{z}) = \overline{\mathcal{F}_{N}(z)^{-}}\]
+
+<p>Autrement dit, pour tout $ m \in \mathbb{Z} $,</p>
+
+\[\mathcal{F}_{N}(\bar{z})_{m} = \overline{\mathcal{F}_{N}(z)}_{-m} = \overline{\mathcal{F}_{N}(z)}_{N-m}\]
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p><strong>Corollaire 1.</strong> Soit $ z \in \ell_{N} $. On a l’équivalence suivante. La suite $ z $ est réelle (i.e. pour tout $ n \in \mathbb{N}, z_{n} \in \mathbb{R} $) ssi pour tout $ m \in \mathbb{Z}, \mathcal{F}<em>{N}(z)</em>{m} = \overline{\mathcal{F}<em>{N}(z)}</em>{-m} = \overline{\mathcal{F}<em>{N}(z)}</em>{N-m} $.</p>
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p><img src="attachment:image.png" alt="Figure 5" /></p>
+
+<p><em>Figure 5. Illustration du corollaire 1. Symétrie de la transformée discrète d’un signal à valeurs réelles.</em></p>
+
+<h3 id="23-convolutions-entre-signaux-et-opérateurs-de-convolution">2.3 Convolutions entre Signaux et Opérateurs de Convolution</h3>
+
+<p>On a définit l’opération de convolution 3 dans la section 1. Donnons un exemple d’un calcul de convolution à la main.</p>
+
+<p><strong>Exemple 2.</strong> Soit $ (z, w) \in \ell_{4}^{2} $ avec $ \left(z_{0}, z_{1}, z_{2}, z_{3}\right) = (1, 1, 0, 2) $ et $ \left(w_{0}, w_{1}, w_{2}, w_{3}\right) = (i, 0, 1, 2) $. Alors</p>
+
+\[\begin{aligned}
+&amp; (z * w)_{0} = 2 + i \\
+&amp; (z * w)_{1} = 2 + i \\
+&amp; (z * w)_{2} = 5 \\
+&amp; (z * w)_{3} = 3 + i
+\end{aligned}\]
+
+<p><strong>Théorème 4.</strong> Soient $ (z, w) \in \ell_{N}^{2} $ deux suites complexes $ N $-périodique. On a les résultats suivants</p>
+
+\[\mathcal{F}_{N}(z * w) = \mathcal{F}_{N}(z) \mathcal{F}_{N}(w)\]
+
+<p>et</p>
+
+\[\mathcal{F}_{N}(z w) = \frac{1}{N} \mathcal{F}_{N}(z) * \mathcal{F}_{N}(w)\]
+
+<p>Autrement dit, la transformée de Fourier discrète du produit de convolution de deux suites est le produit de leur transformée de Fourier discrète. De plus, la transformée de Fourier discrète du produit de deux suites est le produit de convolution de leur transformée de Fourier discrète (divisé par $ N $). Ceci est resumé dans le tableau suivant.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Représentation originale</th>
+      <th style="text-align: center">Espace de Fourier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$ \bar{z} * w $</td>
+      <td style="text-align: center">$ \bar{z} w $</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$ N z w $</td>
+      <td style="text-align: center">$ \bar{z} * \bar{w} $</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Démonstration.</strong> Voir cours manuscrit.</p>
+
+<p>Le théorème 4 offre une possibilité alternative pour calculer la convolution entre deux signaux $ z $ et $ w $. On peut d’abord effectuer la transformée de Fourier discrète des deux signaux, faire le produit, puis calculer la transformée de Fourier discrète inverse. On peut alors comparer la complexité des deux méthodes de calcul. Supposons que le signal $ z $ est de taille $ N $ et que le signal $ w $ est de taille $ K $ avec $ K &lt; N $. La complexité de l’opération de convolution directe est $ \mathcal{O}(N K) $, en revanche, si on utilise la FFT, la complexité est $ \mathcal{O}(N \log N) $. Par conséquent, il est avantageux de transformer la convolution en un produit terme à terme avec la FFT dès que $ K &gt; \log_{2}(N) $. Par exemple, si $ N = 1024 $, alors $ \log_{2}(N) = 10 $, donc il vaut mieux faire la convolution $ z * w $ dans le domaine de Fourier dès que $ K &gt; 10 $.</p>
+
+<p>Si on fixe un vecteur dans la convolution, on peut définir l’endomorphisme de $ \ell_{N} $ suivant.</p>
+
+<p><strong>Définition 7 (Opérateur de Convolution).</strong> Soit $ w \in \ell_{N} $. L’opérateur de convolution cannoniquement associé à $ w $ est l’application</p>
+
+<p>\end{aligned}
+\(```\)
+\begin{aligned}
+T_{w}: &amp; \ell_{N} \longrightarrow \ell_{N} <br />
+&amp; z \longmapsto T_{w}(z) = w * z</p>
+
+    </main>
+</body>
+</html>
