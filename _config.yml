@@ -1,15 +1,9 @@
 theme: minima
 title: Transformation de Fourier
 author: SHI
-lsi: false
-safe: true
-source: [your repo's top level directory]
-incremental: false
 highlighter: rouge
-gist:
-  noscript: false
-
 markdown: kramdown
+destination: ./_site
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
