@@ -1,4 +1,7 @@
-# Cours 1 & 2: Rappels d'Algèbre
+---
+layout: default
+title: Cour 1 & 2 - Rappels d'Algèbre
+---
 
 **Responsable :** Jonathan Vacher (jonathan.vacher@u-paris.fr)
 

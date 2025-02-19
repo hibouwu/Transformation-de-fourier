@@ -1,4 +1,7 @@
-# Cours 6 : Opérateurs Stationnaires et Traitement du Signal
+---
+layout: default
+title: Cours 6 - Opérateurs Stationnaires et Traitement du Signal
+---
 
 Responsable : [Jonathan Vacher](jonathan.vacher@u-paris.fr)
 
