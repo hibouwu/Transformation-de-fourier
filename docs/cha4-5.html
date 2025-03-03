@@ -96,9 +96,9 @@
 
 <p>Cette proposition signifie
 (i) que pour tout $ k \in \mathbb{Z} $ les suites $ h_{m+k N} $ et $ h_{m} $ sont identiques pour tout $ m \in {0, \ldots, N-1} $.
-(ii) que les suites $ h_{m} $ et $ h_{N-m} $ sont identiques pour tout $ m \in {0, \ldots, N-1} $ (ou $ m \in \left{0, \ldots, \frac{N}{2}\right} $ pour ne pas dire 2 fois la même chose).</p>
+(ii) que les suites $ h_{m} $ et $ h_{N-m} $ sont identiques pour tout $ m \in {0, \ldots, N-1} $ (ou $ m \in \left\{0, \ldots, \frac{N}{2}\right\} $ pour ne pas dire 2 fois la même chose).</p>
 
-<p>Autrement dit lorsque l’on s’autorise à avoir $ N $ échantillons, on ne peut représenter de manière unique à l’aide de leurs échantillons que les fonctions harmoniques $ H_{m} $ pour $ m \in \left{0, \ldots, \frac{N}{2}\right} $. Lorsque $ m \in \left{\frac{N}{2}+1, \ldots, N-1\right} $, les fonctions harmoniques $ H_{m} $ ont les mêmes échantillons que les précédentes (i.e. lorsque $ m \in \left{0, \ldots, \frac{N}{2}\right} $). Un exemple est donné dans la figure 2 pour $ N = 6 $. En conclusion, étant donné un échantillonnage à la fréquence $ N / z \tau $, on peut représenter de manière unique (cf. exercice TD 3) les fonctions harmoniques jusqu’à l’ordre $ N / z $ (les autres fonctions Harmoniques restent inaccessibles car leurs échantillons ne sont pas différents des fonctions Harmoniques précédentes). Autrement dit, la fréquence maximale d’un signal que l’on peut représenter à l’aide de $ N $ échantillons est $ N / 2 $. Il s’agit de la fonction harmonique d’ordre $ N / 2 $ i.e. pour tout $ n \in \mathbb{Z} $,</p>
+<p>Autrement dit lorsque l’on s’autorise à avoir $ N $ échantillons, on ne peut représenter de manière unique à l’aide de leurs échantillons que les fonctions harmoniques $ H_{m} $ pour $ m \in \left\{0, \ldots, \frac{N}{2}\right\} $. Lorsque $ m \in \left\{\frac{N}{2}+1, \ldots, N-1\right\} $, les fonctions harmoniques $ H_{m} $ ont les mêmes échantillons que les précédentes (i.e. lorsque $ m \in \left\{0, \ldots, \frac{N}{2}\right\} $). Un exemple est donné dans la figure 2 pour $ N = 6 $. En conclusion, étant donné un échantillonnage à la fréquence $ N / z \tau $, on peut représenter de manière unique (cf. exercice TD 3) les fonctions harmoniques jusqu’à l’ordre $ N / z $ (les autres fonctions Harmoniques restent inaccessibles car leurs échantillons ne sont pas différents des fonctions Harmoniques précédentes). Autrement dit, la fréquence maximale d’un signal que l’on peut représenter à l’aide de $ N $ échantillons est $ N / 2 $. Il s’agit de la fonction harmonique d’ordre $ N / 2 $ i.e. pour tout $ n \in \mathbb{Z} $,</p>
 
 \[h_{\frac{N}{2}, n} = \cos (\pi n) = (-1)^{n}\]
 
@@ -163,10 +163,10 @@ P_{n}(x) P_{v}(x) &amp; = \sum_{m=0}^{N-1} \frac{\hat{u}_{m}}{N} e^{\mathrm{i} m
 \[\hat{z}_{m} = \left|\hat{z}_{m}\right| e^{\mathrm{i} \arg \left(\hat{z}_{m}\right)}\]
 
 <p>Le module $ \left|\hat{z}_{m}\right| $ est appelé amplitude de la fréquence $ m $ et l’argument $ \arg \left(\hat{z}_{m}\right) $ est appelé phase de la fréquence $ m $. De plus, on utilise le vocabulaire suivant
-(i) $ \left{\hat{z}_{m}, m \in {0, \ldots, N-1}\right} $ est le spectre de $ z $,
-(ii) $ \left{\left|\hat{z}_{m}\right|, m \in {0, \ldots, N-1}\right} $ est le spectre d’amplitude de $ z $,
-(iii) $ \left{\left|\hat{z}_{m}\right|^{2}, m \in {0, \ldots, N-1}\right} $ est le spectre de puissance de $ z $,
-(iv) $ \left{\arg \left(\hat{z}_{m}\right), m \in {0, \ldots, N-1}\right} $ est le spectre de phases de $ z $.</p>
+(i) $ \left\{\hat{z}_{m}, m \in {0, \ldots, N-1}\right\} $ est le spectre de $ z $,
+(ii) $ \left\{\left|\hat{z}_{m}\right|, m \in {0, \ldots, N-1}\right\} $ est le spectre d’amplitude de $ z $,
+(iii) $ \left\{\left|\hat{z}_{m}\right|^{2}, m \in {0, \ldots, N-1}\right\} $ est le spectre de puissance de $ z $,
+(iv) $ \left\{\arg \left(\hat{z}_{m}\right), m \in {0, \ldots, N-1}\right\} $ est le spectre de phases de $ z $.</p>
 
 <p><strong>Quelques interprétations</strong> L’identité de Plancherel s’interprète comme la conservation de l’énergie totale du signal</p>
 

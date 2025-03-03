@@ -56,7 +56,7 @@ Responsable : Jonathan Vacher (jonathan.vacher@u-paris.fr)</p>
 
 \[e^{\mathrm{i} \alpha} e^{\mathrm{i} \beta}=e^{\mathrm{i}(\alpha+\beta)}, \quad\left(e^{\mathrm{i} \alpha}\right)^{\alpha}=e^{\mathrm{i} n \alpha} \quad \text { et } \quad\left(e^{\mathrm{i} \alpha}\right)^{\star}=e^{-\mathrm{i} \alpha}\]
 
-<p>(vii) Soit $z=\rho e^{\mathrm{i} \alpha}$, l’équation $w^{N}=z$ admet $N$ racines complexes données pour $m \in{1, \ldots, N-1}$ par</p>
+<p>(vii) Soit $z=\rho e^{\mathrm{i} \alpha}$, l’équation $w^{N}=z$ admet $N$ racines complexes données pour $m \in \{1, \ldots, N-1\}$ par</p>
 
 \[z_{m}=\sqrt[m]{\rho} e^{\mathrm{i} \frac{2 \pi m+n}{N}} . \quad \text { (Racines } N \text {-ième d'un Nombre Complexe) }\]
 
@@ -85,10 +85,11 @@ Lemme 1 (Somme des Termes d’une Suite Géométrique). Pour $k \geqslant 1$, on
 
 \[\forall k \in \mathbb{Z}, \quad(y+z)_{k}=y_{k}+z_{k} \quad \text { et } \quad(\alpha z)_{k}:=\alpha z_{k}\]
 
-<p>L’espace $\left(\ell_{n},+, \cdot\right)$ est alors un $\mathbb{C}$-espace vectoriel.
-Exemple 1. Définissons la suite $z=(\ldots, 1, \mathrm{i},-\mathrm{i}, \sqrt{2} i, 1, \mathrm{i},-\mathrm{i}, \sqrt{2} \mathrm{i}, 1, \mathrm{i},-\mathrm{i}, \sqrt{2} \mathrm{i}, \ldots)$ où les points suspensions indiquent que la même séquence de nombre complexe se répète indéfiniment vers $-\infty$ et $+\infty$. On se fixera le term d’indice $0, z_{0}=1$. La suite $z$ est 4 -périodique. Pour définir $z$, il suffit en fait de donner $\left(z_{0}, z_{1}, z_{2}, z_{3}\right)=(1, \mathrm{i},-\mathrm{i}, \sqrt{2} \mathrm{i})$ et de dire que c’est une suite 4 -périodique. On peut déterminer la valeur de n’importe quel terme de la suite $z_{k}$ en effectuant la division Euclidienne de l’indice $k$ par $N$. On a $k=N q+r$ avec $r \in\left{0, \ldots, N-1\right}$ et ainsi $z_{k}=z_{r}$. Par exemple $-18=4(-5)+2$, ainsi $z_{-18}=z_{2}=-\mathrm{i}$.</p>
+<p>L’espace $\left(\ell_{n},+, \cdot\right)$ est alors un $\mathbb{C}$-espace vectoriel.</p>
 
-<p>Théorème 1 (Dimension et Base Canonique de $\ell_{N}$ ). L’espace vectoriel $\ell_{N}$ des suites $N$-périodique est de dimension $N$. La famille $\mathcal{B}=\left{e_{0}, \ldots, e_{N-1}\right}$, où pour tout $k \in\left{0, \ldots, N-1\right}$, la suite $e_{k}$ est définie par</p>
+<p>Exemple 1. Définissons la suite $z=(\ldots, 1, \mathrm{i},-\mathrm{i}, \sqrt{2} i, 1, \mathrm{i},-\mathrm{i}, \sqrt{2} \mathrm{i}, 1, \mathrm{i},-\mathrm{i}, \sqrt{2} \mathrm{i}, \ldots)$ où les points suspensions indiquent que la même séquence de nombre complexe se répète indéfiniment vers $-\infty$ et $+\infty$. On se fixera le term d’indice $0, z_{0}=1$. La suite $z$ est 4 -périodique. Pour définir $z$, il suffit en fait de donner $\left(z_{0}, z_{1}, z_{2}, z_{3}\right)=(1, \mathrm{i},-\mathrm{i}, \sqrt{2} \mathrm{i})$ et de dire que c’est une suite 4 -périodique. On peut déterminer la valeur de n’importe quel terme de la suite $z_{k}$ en effectuant la division Euclidienne de l’indice $k$ par $N$. On a $k=N q+r$ avec $r \in \left\{0, \ldots, N-1\right\}$ et ainsi $z_{k}=z_{r}$. Par exemple $-18=4(-5)+2$, ainsi $z_{-18}=z_{2}=-\mathrm{i}$.</p>
+
+<p>Théorème 1 (Dimension et Base Canonique de $\ell_{N}$ ). L’espace vectoriel $\ell_{N}$ des suites $N$-périodique est de dimension $N$. La famille $\mathcal{B}=\left\{e_{0}, \ldots, e_{N-1}\right\}$, où pour tout $k \in\left\{0, \ldots, N-1\right\}$, la suite $e_{k}$ est définie par</p>
 
 \[\forall l \in \mathbb{Z}, \quad e_{k, l}= \begin{cases}1 &amp; l \equiv k \bmod N \\ 0 &amp; \text { sinon }\end{cases}\]
 
@@ -126,7 +127,7 @@ Le théorème 1 permet de réaliser que l’espace des vecteurs complexes de tai
 
 <h4 id="131-définition-et-orthogonalité">1.3.1 Définition et Orthogonalité</h4>
 
-<p>Définition 2 (Suites Exponentielles Complexes). On définit la famille $\mathcal{E}=\left{\mathcal{E}_{0}, \mathcal{E}_{1}, \ldots, \mathcal{E}_{N-1}\right}$ des suites exponentielles complexes où pour tout $m \in{0, \ldots, N-1}$, la suite $\mathcal{E}_{m}$ est définie par</p>
+<p>Définition 2 (Suites Exponentielles Complexes). On définit la famille $\mathcal{E}=\left\{\mathcal{E}_{0}, \mathcal{E}_{1}, \ldots, \mathcal{E}_{N-1}\right\}$ des suites exponentielles complexes où pour tout $m \in\{0, \ldots, N-1\}$, la suite $\mathcal{E}_{m}$ est définie par</p>
 
 \[\forall k \in \mathbb{Z}, \quad \mathcal{E}_{m, k}=\exp \left(\frac{2 \mathrm{i} \pi k m}{N}\right)=e^{\frac{2 \mathrm{i} \pi k m}{N}}=\left(\omega_{m}\right)^{k}=\left(\omega_{1}\right)^{m k}\]
 
@@ -150,7 +151,7 @@ Le théorème 1 permet de réaliser que l’espace des vecteurs complexes de tai
 &amp; =\left(1, \omega_{1}^{2}, \omega_{1}^{4}, \omega_{1}^{6}, \ldots, \omega_{1}^{2(N-1)}\right)
 \end{aligned}\]
 
-<p>pour $m \in{3, \ldots, N-2}$</p>
+<p>pour $m \in\{3, \ldots, N-2\}$</p>
 
 \[\begin{aligned}
 \left(\mathcal{E}_{m, 0}, \mathcal{E}_{m, 1}, \ldots, \mathcal{E}_{m, N-1}\right) &amp; =\left(1, e^{\frac{2 \pi i m}{N}}, e^{\frac{4 \pi i m}{N}}, \ldots, e^{\frac{2 \pi i(N-1) m}{N}}\right) \\
@@ -187,7 +188,7 @@ Lemme 2. Pour tout $k \in \mathbb{Z}$ on a</p>
 
 <p>Démonstration. Voir cours manuscrit.</p>
 
-<p>Remarque 6. La famille $\mathcal{E}$ n’est pas orthonormée, en effet pour tout $m \in{0,1, \ldots, N-1}$,</p>
+<p>Remarque 6. La famille $\mathcal{E}$ n’est pas orthonormée, en effet pour tout $m \in\{0,1, \ldots, N-1\}$,</p>
 
 \[\left\|\mathcal{E}_{m}\right\|=\sqrt{N}\]
 
@@ -236,7 +237,7 @@ Lemme 2. Pour tout $k \in \mathbb{Z}$ on a</p>
 
 <p>Dans la section précédente on a vu que la norme $\ell_{N}$ de toutes les suites $\mathcal{E}_{m}$ est $\sqrt{N}$, on peut donc construire une base orthonormale à partir de la base $\mathcal{E}$ simplement en divisant ses vecteurs par $\sqrt{N}$.</p>
 
-<p>Définition 3 (Suites Exponentielles Complexes). On définit la famille $\varepsilon=\left{\varepsilon_{0}, \varepsilon_{1}, \ldots, \varepsilon_{N-1}\right}$ des suites exponentielles complexes normées où pour tout $m \in{0, \ldots, N-1}$, la suite $\varepsilon_{m}$ est définie par</p>
+<p>Définition 3 (Suites Exponentielles Complexes). On définit la famille $\varepsilon=\left\{\varepsilon_{0}, \varepsilon_{1}, \ldots, \varepsilon_{N-1}\right\}$ des suites exponentielles complexes normées où pour tout $m \in\{0, \ldots, N-1\}$, la suite $\varepsilon_{m}$ est définie par</p>
 
 \[\forall k \in \mathbb{Z}, \quad \varepsilon_{m, k}=\frac{1}{\sqrt{N}} \mathcal{E}_{m, k}=\frac{1}{\sqrt{N}} \exp \left(\frac{2 \mathrm{i} \pi k m}{N}\right)\]
 
@@ -250,7 +251,7 @@ Lemme 2. Pour tout $k \in \mathbb{Z}$ on a</p>
 
 <h4 id="143-autre-choix-de-renormalisation">1.4.3 Autre choix de renormalisation</h4>
 
-<p>Certaines références (et implémentations) choisissent une renormalisation différente, dans le but d’écrire certaines formules de façon plus simple. Par exemple, il est possible de considérer une renormalisation en $\frac{1}{N}$ au lieu de $\frac{1}{\sqrt{N}}$ i.e. pour tout $m \in{0, \ldots, N-1}$,</p>
+<p>Certaines références (et implémentations) choisissent une renormalisation différente, dans le but d’écrire certaines formules de façon plus simple. Par exemple, il est possible de considérer une renormalisation en $\frac{1}{N}$ au lieu de $\frac{1}{\sqrt{N}}$ i.e. pour tout $m \in\{0, \ldots, N-1\}$,</p>
 
 \[\mathcal{E}_{m}^{\prime}=\frac{\mathcal{E}_{m}}{N}\]
 
@@ -267,7 +268,7 @@ c_{M, n}=\frac{1}{\sqrt{N}} \cos \left(\frac{2 \pi \frac{N}{M} n}{N}\right)=\fra
 s_{m, n}=\sqrt{\frac{2}{N}} \sin \left(\frac{2 \pi m n}{N}\right) \quad m=1,2, \ldots, M-1
 \end{array}\right.\]
 
-<p>Si $N$ est impair, alors on a $N=2 M+1$ avec $M \in \mathbb{N}$ et on définit encore $c_{0}, c_{m}$ et $s_{m}$ comme ci-dessus, mais on exclut le cas $m=N / 2$ car $N / 2$ n’est pas un nombre entier. On note $\mathcal{C}=\left{c_{0}, c_{1}, \ldots, c_{M-1}, c_{M}\right}$ (ou $\left{c_{0}, c_{1}, \ldots, c_{M-1},\right}$ si $N$ est impair) et $\mathcal{S}=\left{s_{1}, \ldots, s_{M-1}\right}$. On a le théorème suivant.</p>
+<p>Si $N$ est impair, alors on a $N=2 M+1$ avec $M \in \mathbb{N}$ et on définit encore $c_{0}, c_{m}$ et $s_{m}$ comme ci-dessus, mais on exclut le cas $m=N / 2$ car $N / 2$ n’est pas un nombre entier. On note $\mathcal{C}=\left\{c_{0}, c_{1}, \ldots, c_{M-1}, c_{M}\right\}$ (ou $\left\{c_{0}, c_{1}, \ldots, c_{M-1},\right\}$ si $N$ est impair) et $\mathcal{S}=\left\{s_{1}, \ldots, s_{M-1}\right\}$. On a le théorème suivant.</p>
 
 <p>Définition 4. On appelle famille orthonormale réelle de Fourier de $\ell_{N}$ les familles de suites $\mathcal{C} \cup \mathcal{S}$.
 Théorème 4. La famille orthonormale réelle de Fourier $\mathcal{C} \cup \mathcal{S}$ est une base orthonormale de $\ell_{N}$. Pour tout $z \in \ell_{N}$,</p>
@@ -312,7 +313,7 @@ Dans ce cours, on travaillera avec les bases orthogonales $\mathcal{E}$ et $\mat
 
 <p>La transformée de Fourier de $z$ est en fait la suite périodique définie par les coefficients de $z$ dans la base de Fourier.</p>
 
-<p>Définition 5 (Transformée de Fourier Discrète). La transformée de Fourier discrète de $z \in \ell_{N}$ est la suite $\hat{z} \in \ell_{N}$ des coefficients de $z$ dans la base de Fourier. Plus précisément, pour tout $m \in{0, \ldots, N-1}$,</p>
+<p>Définition 5 (Transformée de Fourier Discrète). La transformée de Fourier discrète de $z \in \ell_{N}$ est la suite $\hat{z} \in \ell_{N}$ des coefficients de $z$ dans la base de Fourier. Plus précisément, pour tout $m \in\{0, \ldots, N-1\}$,</p>
 
 \[\hat{z}_{m}=\left\langle z, \mathcal{E}_{m}\right\rangle=\sum_{n=0}^{N-1} z_{n} e^{-2 \mathrm{i} \pi \frac{m n}{N}}\]
 
@@ -342,7 +343,7 @@ On fera une distinction entre la variable $n$ de $z$ et la variable $m$ de $\hat
 
 <p>On peut donc passer de la suite $z$ à sa transformée de Fourier $\hat{z}$ et réciproquement ! On définit donc de la manière suivant la transformée de Fourier inverse.</p>
 
-<p>Définition 6 (Transformée de Fourier Discrète Inverse). La transformée de Fourier discrète inverse de $\hat{z} \in \ell_{N}$ est la suite $z \in \ell_{N}$ des coefficients de $z$ dans la base de Fourier. Plus précisément, pour tout $m \in{0, \ldots, N-1}$</p>
+<p>Définition 6 (Transformée de Fourier Discrète Inverse). La transformée de Fourier discrète inverse de $\hat{z} \in \ell_{N}$ est la suite $z \in \ell_{N}$ des coefficients de $z$ dans la base de Fourier. Plus précisément, pour tout $m \in\{0, \ldots, N-1\}$</p>
 
 \[z_{n}=\frac{1}{N}\left\langle\hat{z}, \hat{\mathcal{E}}_{n}\right\rangle=\frac{1}{N} \sum_{m=0}^{N-1} \hat{z}_{m} e^{2 i \pi \frac{m n}{N}}=\mathcal{I} \mathcal{F}_{N}(\hat{z})\]
 
