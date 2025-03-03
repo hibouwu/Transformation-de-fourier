@@ -551,4 +551,3 @@ Les valeurs propres d'un opérateur qui conserve le produit scalaire ont une for
 **Théorème 11 (Théorème Spectral).** Soit $ f \in \mathcal{L}(V) $ un endomorphisme autoadjoint. Alors $ f $ est réductible/diagonalisable dans une base orthonormée et ses valeurs propres sont réelles.
 
 **Démonstration.** Voir cours manuscrit.
-
